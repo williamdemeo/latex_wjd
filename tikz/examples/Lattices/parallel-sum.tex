@@ -1,0 +1,28 @@
+%% File: parallel-sum.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+
+%% notes: Two potatoes side-by-side with new common top and bottom
+\node[lat] (bot) at (0,-3.7) {};
+\node[lat] (top) at (0,3.7) {};
+%% left potato:
+\node[lat] (botL1) at (-2,-2) {};
+\node[lat] (topL1) at (-2,2) {};
+%% right potato:
+\node[lat] (botL2) at (2,-2) {};
+\node[lat] (topL2) at (2,2) {};
+
+%% lines connecting potatoes to new top and bottom
+\draw[semithick] 
+(bot) to (botL1) (topL1) to (top)
+(bot) to (botL2) (topL2) to (top);
+
+\draw [semithick]  
+%% left potato:
+(botL1) to [out=50,in=-50] (topL1)
+(botL1) to [out=130,in=-130] (topL1)
+%% right potato:
+(botL2) to [out=50,in=-50] (topL2)
+(botL2) to [out=130,in=-130] (topL2);
+

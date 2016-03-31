@@ -1,0 +1,158 @@
+%% File: Lattices.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%% This file is here to make it easy to view various diagrams in this directory.
+\documentclass{amsart}
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{mathrsfs}
+\usepackage{stmaryrd,enumerate}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{xspace}
+
+\begin{document}
+
+%%///////////////////////////////////////////////////////////////////////////////////
+%% tikz notes:
+%% For Hasse diagrams, instead of hard-coding the size of the circle representing
+%% points in a lattice, please use \dotsize.  For example,
+%%     \node (bottom) at (0,0) [draw, circle,inner sep=\dotsize] {};
+%% or
+%%     \node[lat] (bottom) at (0,0) {};  (see comment on the "lat" style below)
+\newcommand{\dotsize}{0.8pt}
+%%
+%% To create nodes of lattices in a uniform and consistent way, we define
+\tikzstyle{lat} = [circle,draw,inner sep=\dotsize]
+%% To put a lattice node named "mynode" at the point (x,y)=(1,2) in the figure,
+%% put the following inside your tikzpicture block:
+%%     \node[lat] (mynode) at (1,2) {};
+
+% To scale all diagrams uniformly, change this setting:
+\newcommand{\figscale}{1}
+
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{M3.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: M3.tex}};
+  \end{tikzpicture}
+  \hskip1cm
+  \begin{tikzpicture}[scale=\figscale]
+    \input{M3-big.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: M3-big.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{M4.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: M4.tex}};
+  \end{tikzpicture}
+  \hskip1cm
+  \begin{tikzpicture}[scale=\figscale]
+    \input{M4-big.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: M4-big.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L3.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L3.tex}};
+  \end{tikzpicture}
+  \hskip1cm
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L3-big.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L3-big.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L10.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L10.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L11.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L11.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L13.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L13.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L17.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L17.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L19.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L19.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{L20.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: L20.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{N54W.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: N54W.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{filter-ideal.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: filter-ideal.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{parallel-sum.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: parallel-sum.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{ordinal-sum.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: ordinal-sum.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{adjoined-ordinal-sum.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: adjoined-ordinal-sum.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{general-ordinal-sum.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: general-ordinal-sum.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{wheatstone_bridge.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: weatstone\_bridge.tex}};
+  \end{tikzpicture}
+
+  \begin{tikzpicture}[scale=\figscale]
+    \input{wheatstone_bridge_2.tex}
+    \draw (0,0) node {$(0,0)$};
+    \draw (0,-1) node {{\tt file: weatstone\_bridge\_2.tex}};
+  \end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,15 @@
+%% File: L3.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+% L11 aka L3 
+\node[lat] (bottom) at (0,0) {};
+\node[lat] (top) at (1,3) {};
+\node[lat] (n11) at (-1,1) {};
+\node[lat] (11) at (1,1)  {};
+\node[lat] (mp) at (.5,1.5)  {};
+\node[lat] (02) at (0,2)  {};
+\node[lat] (22) at (2,2)  {};
+
+\draw[semithick] (bottom) to (11) to (22) to (top) to (02) to (mp) to (11)
+(bottom) to (n11) to (02);

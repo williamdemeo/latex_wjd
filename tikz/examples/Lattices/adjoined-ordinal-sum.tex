@@ -1,0 +1,20 @@
+%% File: adjoined-ordinal-sum.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%% general-ordinal-sum.tex
+
+%% n-fold ordinal sum
+\node[lat] (botL1) at (0,-4) {};
+\node[lat] (00) at (0,0) {};
+\node[lat] (topL2) at (0,4) {};
+\node[lat] (topLn) at (0,10) {};
+\node[lat] (botLn) at (0,6) {};
+\draw (0,5.5) node {$\vdots$};
+\draw 
+(botL1) to [out=50,in=-50] (00)
+(botL1) to [out=130,in=-130] (00)
+(00) to [out=50,in=-50] (topL2)
+(00) to [out=130,in=-130] (topL2)
+(botLn) to [out=50,in=-50] (topLn)
+(botLn) to [out=130,in=-130] (topLn);

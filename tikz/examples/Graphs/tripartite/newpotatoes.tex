@@ -1,0 +1,41 @@
+%%% FILE: newpotatoes.tex
+%%% DESCRIPTION: input file (tikz code for tripartite graphs)
+%%% AUTHOR: williamdemeo@gmail.com
+%%% DATE: 2016-03-06
+%%%
+%%% To insert the code in this file in your own tikzpicture environment, make
+%%% sure this file is in your working directory or path and put some lines
+%%% like the following in your LaTeX document:
+%%%
+%%%     \begin{tikzpicture}[scale=0.8]  %% <-- (change the scale if you want)
+%%%        \input{newpotatoes}
+%%%     \end{tikzpicture}
+%%%
+%%% See the file tripartite_graphs.tex for more examples.
+
+%% Specify vertex style here:
+\tikzstyle{vstyle}=[circle,draw=blue!50,fill=blue!20,thick,inner sep=0pt,minimum size=3mm]
+
+%% Vertices in North-Western potato:
+\foreach \i in {0,1,2,3}
+\node[vstyle] (a\i) at (\i,1.25*\i) {\i};
+
+%% Vertices in North-Eastern potato:
+\foreach \i in {0,1,2,3}
+\node[vstyle] (b\i) at (8.25-\i,1.25*\i) {\i};
+
+%% Vertices in Southern potato:
+\foreach \i in {0,1,2,3}
+\node[vstyle] (c\i) at (2*\i+1,-2) {\i};
+
+%% ellipse surrounding vertices in NW potato
+\draw[dotted,thick] let \p1=(a0), \p2=(a3), \n1={atan2(\y2-\y1,\x2-\x1)}, \n2={veclen(\y2-\y1,\x2-\x1)}
+in ($ (a0)!0.5!(a3) $) ellipse [x radius=\n2/2+20pt, y radius=0.7cm,rotate=90-\n1];
+
+%% ellipse surrounding vertices in NE potato
+\draw[dotted,thick] let \p1=(b0), \p2=(b3), \n1={atan2(\y2-\y1,\x2-\x1)}, \n2={veclen(\y2-\y1,\x2-\x1)}
+in ($ (b0)!0.5!(b3) $) ellipse [x radius=\n2/2+20pt, y radius=0.7cm,rotate=90-\n1];
+
+%% ellipse surrounding vertices in Southern potato
+\draw[dotted,thick] let \p1=(c0), \p2=(c3), \n1={atan2(\y2-\y1,\x2-\x1)}, \n2={veclen(\y2-\y1,\x2-\x1)}
+in ($ (c0)!0.5!(c3) $) ellipse [x radius=\n2/2+20pt, y radius=0.7cm]; %,rotate=90-\n1];

@@ -1,0 +1,19 @@
+%% File: M4.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+\node[lat] (bot) at (0,0) {};
+\node[lat] (top) at (0,2) {};
+\node[lat] (a) at (-1,1) {};
+\node[lat] (b) at (-.5,1) {};
+\node[lat] (c) at (.5,1) {};
+\node[lat] (d) at (1,1) {};
+\draw[semithick] (bot) -- (a) -- (top) -- (b) -- (bot) -- (c) -- (top) -- (d) -- (bot);
+
+        %% \node (250) at (2.5,0)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (253) at (2.5,3)  [draw, circle, inner sep=\dotsize] {};
+        %% \foreach \i in {1,...,4} 
+        %%          { 
+        %%            \node (\i15) at (\i,1.5)  [draw, circle, inner sep=\dotsize] {};
+        %%            \draw[semithick] (250) to (\i15) to (253);
+        %%          }

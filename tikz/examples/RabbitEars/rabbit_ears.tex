@@ -1,0 +1,110 @@
+\documentclass{amsart}
+\usepackage{tikz,calc,scalefnt,xspace,url}
+
+\begin{document}
+
+\noindent {\Large Tikz examples for depicting overalgebras or ``rabbit ears.''}
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\it Example 1:} 
+    {\bf Lines} (resp., dotted lines) surround {\bf sets} (resp., blocks).
+
+    \tikzstyle{blocks} = [rounded corners,dotted,semithick]
+    \tikzstyle{sets} = [rounded corners]
+
+    %% (so we remember to adjust the fig caption if necessary--see Example 2 below)
+    \newcommand{\mycaption}{Dotted lines delineate the congruence classes
+      of $\beta^\star$ (left) and $\tbeta$ (right); solid lines surround the sets $B_i$.}
+
+    \newcommand{\tbeta}{\ensuremath{\widetilde{\beta}}}
+    \newcommand{\ttheta}{\ensuremath{\widetilde{\theta}}}
+    \newcommand{\hbeta}{\ensuremath{\widehat{\beta}}}
+
+
+\begin{figure}[h]
+  \centering
+      {\scalefont{.8}
+        \begin{tikzpicture}[scale=.7]
+
+          % lines around the minimal universes (the $B_i$'s)
+          \input{B_sets}
+
+          % lines around equivalence classes 
+          \input{star_blocks}
+
+          % element labels (the $b^i_j$'s)
+          \input{element_labels}
+
+          \draw (0, -4) node {$\beta^\star$ $(=\beta^*)$};
+        \end{tikzpicture}
+        \hskip1cm
+        \begin{tikzpicture}[scale=.7]
+          % lines around the minimal universes (the $B_i$'s)
+          \input{B_sets}
+
+          % lines around equivalence classes 
+          \input{hat_blocks}
+
+          % element labels (the $b^i_j$'s)
+          \input{element_labels}
+
+          \draw (0, -4) node {$\tbeta$ $(=\hbeta)$};
+        \end{tikzpicture}
+      }
+      \caption{\mycaption}
+      %% \label{fig:overalgebra1}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\it Example 2:} 
+    {\bf Lines} (resp., dotted lines) surround {\bf blocks} (resp., sets).
+
+    \tikzstyle{blocks} = [rounded corners]
+    \tikzstyle{sets} = [rounded corners,dotted,semithick]
+
+    %% adjust the figure caption:
+    \renewcommand{\mycaption}{Solid lines delineate the congruence classes
+      of $\beta^\star$ (left) and $\tbeta$ (right); dotted lines surround the sets $B_i$.}
+
+\begin{figure}[h]
+  \centering
+      {\scalefont{.8}
+        \begin{tikzpicture}[scale=.7]
+
+          % lines around the minimal universes (the $B_i$'s)
+          \input{B_sets}
+
+          % lines around equivalence classes 
+          \input{star_blocks}
+
+          % element labels (the $b^i_j$'s)
+          \input{element_labels}
+
+          \draw (0, -4) node {$\beta^\star$ $(=\beta^*)$};
+        \end{tikzpicture}
+        \hskip1cm
+        \begin{tikzpicture}[scale=.7]
+          % lines around the minimal universes (the $B_i$'s)
+          \input{B_sets}
+
+          % lines around equivalence classes 
+          \input{hat_blocks}
+
+          % element labels (the $b^i_j$'s)
+          \input{element_labels}
+
+          \draw (0, -4) node {$\tbeta$ $(=\hbeta)$};
+        \end{tikzpicture}
+      }
+      \caption{\mycaption}
+      %% \label{fig:overalgebra1}
+\end{figure}
+
+\noindent 
+The second option was used in the original paper. See \\
+\url{https://github.com/williamdemeo/Overalgebras}.
+\end{document}
+

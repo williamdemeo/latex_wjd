@@ -1,0 +1,22 @@
+%% File: filter-ideal.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%% Disjoint union of a principal filter and a principle ideal.
+\node[lat] (bottom) at (0,0) {};
+\node[lat] (top) at (0,8) {};
+\node[lat] (alpha) at (-2,3) {};
+\node[lat] (beta) at (2,5) {};
+\draw[semithick] 
+% filter:
+(alpha) to [out=30, in=-80] (top) to [out=205, in=105] (alpha)
+% ideal: 
+(bottom) to [out=30, in=-80] (beta) to [out=205, in=110] (bottom);
+
+%% dotted lines suggest ordering of elements in distinct potatoes
+%% To remove the dotted lines, comment the next two lines:
+\draw[dotted] 
+(-1.5,4.25) to (.5,1.25) 
+(1.25,3) to (-1,6);
+\draw[dotted] (bottom) to (alpha)  (beta) to (top);
+

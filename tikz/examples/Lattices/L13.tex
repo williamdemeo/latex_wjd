@@ -1,0 +1,19 @@
+%% File: L13.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%\newcommand{\dotsize}{1};
+\node[lat] (0) at (0,0) {};
+\node[lat] (1) at (-0,1) {};
+\node[lat] (2) at (1,2) {};
+\node[lat] (3) at (-1,2) {};
+\node[lat] (4) at (-0,2) {};
+\node[lat] (5) at (-0,3) {};
+\node[lat] (6) at (-0,4) {};
+%\draw[font=\scriptsize] (0,-.5) node {[A4, (C2 x C2 x C2 x C2) : A5]};
+%\draw[font=\scriptsize] (0,-1) node {SmallGroup(960,11358) Index 80};
+
+\draw[semithick]
+(0) to (1) to (4) to (5) to (6)
+(0) to (2) to (6) to (3) to (0);
+

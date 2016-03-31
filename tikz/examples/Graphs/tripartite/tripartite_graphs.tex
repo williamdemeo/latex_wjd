@@ -1,0 +1,165 @@
+%%% FILE: tripartite_graphs.tex
+%%% DESCRIPTION: tikz code for some tripartite graphs
+%%% AUTHOR: williamdemeo@gmail.com
+%%% DATE: 2016-03-06
+%%%
+%%% DEPENDENCIES: `newpotatoes.tex` (input file defining the placement of the nodes)
+%%%               `\smallscale` (latex macro specifying how big the diagrams should be)
+%%%               `lat` (tikzstyle specifying default node style)
+%%%               `myarrow` (tikzstyle specifying default arrow style)
+%%%
+%%% NOTES: This file (tripartite_graphs.tex) merely specifies lines between nodes.
+%%%        The real work is done in the input file `newpotatoes.tex`, which specifies 
+%%%        the layout of the vertices of the tripartites graph(s).  
+%%%
+%%%        Of course it's simpler to keep all the code to generate a given
+%%%        figure in a single flat file, but the modular set-up we use here is better
+%%%        for generating a bunch of graphs that use the same collections (``potatoes'')
+%%%        of partite sets, while varying the edge set.
+%%%
+\documentclass{article}
+\usepackage[top=3cm,bottom=3cm,left=3.00cm,right=3.00cm]{geometry}
+
+\usepackage{tikz,url}
+\usepackage{tkz-graph}
+\usetikzlibrary{positioning,chains,fit,shapes,calc}
+
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+
+\begin{document}
+
+\tikzstyle{lat} = [circle,draw,inner sep=1pt]
+\tikzstyle{myarrow} = [->,>=stealth',shorten >=1pt,shorten >=5pt,shorten <=7pt]
+\definecolor{myblue}{RGB}{80,80,160}
+\definecolor{mygreen}{RGB}{80,160,80}
+
+\newcommand{\smallscale}{.8}
+
+    \begin{tikzpicture}[scale=\smallscale]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: {0, 1, 2, 3}
+      \begin{scope}[very thick,every node/.style={midway,fill=white}]
+        \draw[red]     (a1)--(b0)--(c0)--(a1) node {2};
+        \draw[black]   (a0)--(b0) node {0} (b0)--(c1)--(a0) ;
+        \draw[myblue]    (a0)--(b1)--(c0)--(a0) node {1};
+        \draw[mygreen] (a1)--(b1) node {3} (b1)--(c1)--(a1) ;
+      \end{scope}
+
+    \end{tikzpicture}
+    %% ------------------------------------------------------
+    \hskip5mm 
+    %% ------------------------------------------------------
+    \begin{tikzpicture}[scale=\smallscale]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: {4, 5, 6, 7}
+      \begin{scope}[very thick,every node/.style={midway,fill=white}]
+        \draw[blue]    (a0)--(b3)--(c3)--(a0) node[pos=.7] {5};
+        \draw[black]   (a0)--(b2)--(c2)--(a0) node[pos=.4] {4};
+        \draw[red]     (a1)--(b2)--(c3)--(a1) node {6};
+        \draw[mygreen] (a1)--(b3)--(c2)--(a1) node {7};
+      \end{scope}
+    \end{tikzpicture}
+
+    %% ======================================================
+    \vskip2cm
+    %% ======================================================
+
+    \begin{tikzpicture}[scale=\smallscale]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: {8, 9, 10, 11}
+      \begin{scope}[very thick,every node/.style={midway,fill=white}]
+        \draw[black]   (a2)--(b0)--(c2)--(a2) node {8};
+        \draw[blue]    (a3)--(b0)--(c3)--(a3) node {9};
+        \draw[red]     (a2)--(b1)--(c3)--(a2) node {10};
+        \draw[mygreen] (a3)--(b1)--(c2) node[pos=.4] {11} (c2)--(a3);
+      \end{scope}
+
+    \end{tikzpicture}
+    %% ------------------------------------------------------
+    \hskip5mm 
+    %% ------------------------------------------------------
+    \begin{tikzpicture}[scale=\smallscale]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: {8, 9, 10, 11}
+      \begin{scope}[very thick,every node/.style={pos=.4,fill=white}]
+        \draw[red]     (a2)--(b3)--(c1) node {14} (c1)--(a2);
+        \draw[black]   (a2)--(b2) node {12} (b2)--(c0)--(a2);
+        \draw[blue]    (a3)--(b3)--(c0) node {13} (c0)--(a3);
+        \draw[mygreen] (a3)--(b2)--(c1) node {15} (c1)--(a3);
+      \end{scope}
+
+    \end{tikzpicture}
+
+\newpage
+
+
+    \begin{tikzpicture}[scale=1.5]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: (all edges with colors arranged in cycles)
+      \begin{scope}[very thick]
+        \draw[black]   (a0)--(b0)--(c1)--(a0);
+        \draw[black]    (a0)--(b1)--(c0)--(a0);
+        \draw[black]     (a1)--(b0)--(c0)--(a1);
+        \draw[black] (a1)--(b1)--(c1)--(a1);
+        \draw[blue]   (a0)--(b2)--(c2)--(a0);
+        \draw[blue]    (a0)--(b3)--(c3)--(a0);
+        \draw[blue]     (a1)--(b2)--(c3)--(a1);
+        \draw[blue] (a1)--(b3)--(c2)--(a1);
+        \draw[red]   (a2)--(b0)--(c2)--(a2);
+        \draw[red]    (a3)--(b0)--(c3)--(a3);
+        \draw[red]     (a2)--(b1)--(c3)--(a2);
+        \draw[red]     (a3)--(b1)--(c2)--(a3);
+        \draw[mygreen]   (a2)--(b2)--(c0)--(a2);
+        \draw[mygreen]    (a3)--(b3)--(c0)--(a3);
+        \draw[mygreen]     (a2)--(b3)--(c1)--(a2);
+        \draw[mygreen]      (a3)--(b2)--(c1)--(a3);
+      \end{scope}
+
+    \end{tikzpicture}
+
+\newpage
+
+    \begin{tikzpicture}[scale=1.5]
+
+      %% Vertices:
+      \input{newpotatoes}
+
+      %% Edges: (all edges with labels)
+      \begin{scope}[very thick,every node/.style={midway,fill=white}]
+        \draw[black]   (a0)--(b0)--(c1)--(a0) node {0};
+        \draw[blue]    (a0)--(b1)--(c0)--(a0) node {1};
+        \draw[red]     (a1)--(b0)--(c0)--(a1) node {2};
+        \draw[mygreen] (a1)--(b1)--(c1)--(a1) node {3};
+        \draw[black]   (a0)--(b2)--(c2)--(a0) node {4};
+        \draw[blue]    (a0)--(b3)--(c3)--(a0) node {5};
+        \draw[red]     (a1)--(b2)--(c3)--(a1) node {6};
+        \draw[mygreen] (a1)--(b3)--(c2)--(a1) node {7};
+        \draw[black]   (a2)--(b0)--(c2)--(a2) node {8};
+        \draw[blue]    (a3)--(b0)--(c3)--(a3) node {9};
+        \draw[red]     (a2)--(b1)--(c3)--(a2) node {10};
+        \draw[mygreen] (a3)--(b1)--(c2)--(a3) node {11};
+        \draw[black]   (a2)--(b2)--(c0)--(a2) node {12};
+        \draw[blue]    (a3)--(b3)--(c0)--(a3) node {13};
+        \draw[red]     (a2)--(b3)--(c1)--(a2) node {14};
+        \draw[mygreen] (a3)--(b2)--(c1)--(a3) node {15};
+      \end{scope}
+
+    \end{tikzpicture}
+
+\end{document}

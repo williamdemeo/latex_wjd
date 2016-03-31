@@ -1,0 +1,27 @@
+%% File: wheatstone_bridge_2.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+
+      \node[lat] (bot) at (0,0)  {};
+      \node[lat] (top) at (0,3)  {};
+
+      \node[lat] (a1) at (-2,1.5)  {};
+      \node[lat] (a2) at (-1,1.5)  {};
+      \node[lat] (a3) at (0,1.5)  {};
+      \node[lat] (b) at (0,1)  {};
+      \node[lat] (a4) at (1,1.5)  {};
+      \node[lat] (a5) at (2,1.5)  {};
+
+      \draw (top) node [above] {$1_X$};
+      \draw (a1) node [left] {$\alpha_1$};
+      \draw (a2) node [left] {$\alpha_2$};
+      \draw (a3) node [right] {$\alpha_3$};
+      \draw (b) node [right] {$\beta$};
+      \draw (a4) node [right] {$\alpha_4$};
+      \draw (a5) node [right] {$\alpha_5$};
+      \draw (bot) node [below] {$0_X$};
+      \draw[semithick] 
+      (bot) -- (a1) -- (top) -- (a2) --
+      (bot) -- (b) -- (a3) -- (top) -- (a4) --
+      (bot) -- (a5) -- (top);

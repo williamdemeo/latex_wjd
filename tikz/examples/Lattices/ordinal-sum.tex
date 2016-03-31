@@ -1,0 +1,15 @@
+%% File: ordinal-sum.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%% Two potatoes, one atop the other
+\node[lat] (botL1) at (0,-4) {};
+\node[lat] (m80) at (0,0) {};
+\node[lat] (topL2) at (0,4) {};
+
+\draw [semithick]  
+(botL1) to [out=50,in=-50] (m80)
+(botL1) to [out=130,in=-130] (m80)
+(m80) to [out=50,in=-50] (topL2)
+(m80) to [out=130,in=-130] (topL2);
+

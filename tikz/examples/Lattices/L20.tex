@@ -1,0 +1,11 @@
+%% File: L20.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+\foreach \j in {0,...,4}
+    {
+      \node[lat] (0\j) at (0,\j) {};
+    }
+\node[lat] (152) at (1.5,2) {};
+\node[lat] (n125) at (-1,2.5) {};
+\draw[semithick] (01) to (02) to (03) to (04) to (n125) to (01) to (00) to (152) to (04);

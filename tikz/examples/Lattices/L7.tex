@@ -1,0 +1,21 @@
+%% File: L7.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+      \node[lat] (J1) at (0,1)  {};
+      \draw (.36, 1) node {$J_1$};
+      \node[lat] (H) at (1,0)  {};
+      \draw (1.16, -.2) node {$H$};
+      \node[lat] (M2) at (1,2)  {};
+      \draw (1.4, 2) node {$M_2$};
+      \node[lat] (J2) at (2,1)  {};
+      \draw (2.2, .8) node {$J_2$};
+      \node[lat] (G) at (2,3)  {};
+      \draw (2.3, 3.1) node {$G$};
+      \node[lat] (M1) at (3,2)  {};
+      \draw (3.35, 2) node {$M_1$};
+      \node[lat] (K) at (-1,1.2)  {};
+      \draw (-1.28, 1.15) node {$K$};
+
+      \draw[semithick] (H) to (J1) to (M2) to (G) to (M1) to (J2) to (H) (J2) to (M2);
+      \draw[semithick] (H) to (K) to (G);

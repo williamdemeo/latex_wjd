@@ -1,0 +1,23 @@
+%% File: L19.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+\node[lat] (bottom) at (0,0) {};
+\node[lat] (top) at (0,3)  {};
+\node[lat] (11) at (1,1)  {};
+\node[lat] (n11) at (-1,1)  {};
+\node[lat] (12) at (1,2)  {};
+\node[lat] (n12) at (-1,2)  {};
+\node[lat] (01) at (0,1)  {};
+\draw[semithick] (bottom) to (11) to (12) to (top) to (n12) to (n11) to (bottom) to (01) to (12);
+
+
+        %% \node (bottom) at (0,0)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (top) at (0,3)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (11) at (1,1)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (n11) at (-1,1)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (12) at (1,2)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (n12) at (-1,2)  [draw, circle, inner sep=\dotsize] {};
+        %% \node (01) at (0,1)  [draw, circle, inner sep=\dotsize] {};
+
+        %% \draw[semithick] (bottom) to (11) to (12) to (top) to (n12) to (n11) to (bottom) to (01) to (12);

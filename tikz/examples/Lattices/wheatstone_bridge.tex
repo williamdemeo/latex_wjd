@@ -1,0 +1,23 @@
+%% File: wheatstone_bridge.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+%% "Wheatstone Bridge"
+\node[lat] (x) at (-1,1) {};
+\node[lat] (y) at (1,1) {};
+\node[lat] (a) at (0,2) {};
+\node[lat] (b) at (0,0) {};
+\draw (x) node [left] {$x$};
+\draw (a) node [above] {$a$};
+\draw (b) node [below] {$b$};
+\draw (y) node [right] {$y$};
+\draw[semithick] (b)-- (a) node[pos=.5,right] {$\beta$};
+\draw[semithick] (x)-- (a) node[pos=.5,left] {$\alpha_1$};
+\draw[semithick] (x)-- (b) node[pos=.5,left] {$\alpha_2$};
+\draw[semithick] (b)-- (y) node[pos=.5,right] {$\alpha_1$};
+\draw[semithick] (a)-- (y) node[pos=.5,right] {$\alpha_2$};
+%%   \caption{The Wheatstone Bridge which defines the relation 
+%%     $\tau(\alpha_1, \alpha_2, \beta)$ as follows: 
+%%     $(x,y) \in \tau(\alpha_1, \alpha_2, \beta)$ if and only if there 
+%%     exist $a, b \in X$ satisfying the relations in the diagram.}
+

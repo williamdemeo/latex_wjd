@@ -1,0 +1,19 @@
+%% File: general-ordinal-sum.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2015 William DeMeo
+
+\node[lat] (botL1) at (0,-6) {};
+\node[lat] (topL1) at (0,-2) {};
+\node[lat] (botL2) at (0,-1) {};
+\node[lat] (topL2) at (0,3) {};
+\node[lat] (04) at (0,4) {};
+\node[lat] (06) at (0,6) {};
+\node[lat] (botLn) at (0,7) {};
+\node[lat] (topLn) at (0,11) {};
+\draw (0,5.5) node {$\vdots$};
+\draw 
+(botL1) to [out=50,in=-50] (topL1)
+(botL1) to [out=130,in=-130] (topL1) to (botL2) to [out=50,in=-50] (topL2)
+(botL2) to [out=130,in=-130] (topL2) to (04)
+(06) to (botLn) to [out=50,in=-50] (topLn)
+(botLn) to [out=130,in=-130] (topLn);

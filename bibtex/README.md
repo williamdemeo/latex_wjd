@@ -20,3 +20,5 @@ Then compile your document with
 	bibtex Foo.aux
 	pdflatex Foo.tex
 
+
+**Questions/comments/suggestions:** please [open a new issue](https://github.com/williamdemeo/latex_wjd/issues/new).

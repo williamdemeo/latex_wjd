@@ -1,4 +1,6 @@
+## LaTeX templates
 
-+ **templates** directory: contains LaTeX templates for various purposes, 
-like exams, assingments, etc.  These were mostly obtained from
-http://www.latextemplates.com/cat/assignments
+This directory contains LaTeX templates for things like 
+exams, homework assingments, posters, etc.  Some of these were 
+obtained from the
+[latextemplatex.com](http://www.latextemplates.com/cat/assignments) website

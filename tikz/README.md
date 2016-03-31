@@ -1,9 +1,10 @@
-## tikz-examples
+## tikz examples
 
-This repository collects some tikz examples, mostly Hasse diagrams.
+This tikz/examples directory collects some tikz examples for including in
+LaTeX documents.
 
-To demonstrate how these can be inserted into LaTeX documents,
-each directory contains a file called directoryname.tex.
+To demonstrate how these can be used, each directory contains a file called 
+directoryname.tex.
 For example, in the Lattices directory is a file called Lattice.tex which pulls
 in a bunch of lattices from that directory and surrounds them with a tikz
 environment. 
@@ -35,7 +36,7 @@ You can increase the scale and add some labels. For example,
 
 ### Troubleshooting
 
-**Questions/comments/suggestions:** please [open a new issue](https://github.com/williamdemeo/tikz-examples/issues/new).
+**Questions/comments/suggestions:** please [open a new issue](https://github.com/williamdemeo/latex_wjd/issues/new).
 
 ### Terms of Use
 This repository and its contents are free software that you can redistribute

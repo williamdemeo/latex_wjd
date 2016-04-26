@@ -1,0 +1,461 @@
+%%% Uncomment only one of the next two lines (depending on whether you want the answers printed)
+%%\documentclass[addpoints,12pt]{exam}
+\documentclass[answers,addpoints,12pt]{exam}
+
+\usepackage[usenames, dvipsnames]{color} % defines a new color
+%\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % light blue
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Answer: }}
+
+%% How to print correct answer choices:
+   \CorrectChoiceEmphasis{\itshape\bfseries} %% <-- bold italics
+%%    
+%% \CorrectChoiceEmphasis{\color{ForestGreen}\bfseries} %% <-- green bold
+
+\pointsinmargin
+\pointpoints{pt}{pts}
+\marginpointname{pts}
+
+\makeatletter
+\newif\ifanswers
+\@ifclasswith{exam}{answers}{\answerstrue}{\answersfalse}
+\makeatother
+\newcommand{\scratchpage}{%
+  \ifanswers % do nothing
+  \else \newpage \thispagestyle{empty} \begin{center} -- scratch -- \end{center} \fi}
+
+\newcommand{\foo}{\ifanswers fooone\else footwo\fi}
+
+%% Change geometry if you want:
+%% \usepackage[top=2cm, left=2cm,right=2cm,bottom=1cm]{geometry}%
+
+\usepackage{amsmath}
+\usepackage{amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{url,multicol,enumerate}
+\usepackage{tikz}
+
+\theoremstyle{remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{prop}{Proposition}
+\newtheorem{problem}{Problem}
+\newtheorem*{prob}{Problem}
+\newtheorem*{answer}{{\bf Answer}}
+\newtheorem*{answers}{{\bf Answers}}
+\newtheorem*{explanation}{{\bf Explanation}}
+\newtheorem*{hint}{{\it Hint}}
+\newtheorem*{ex}{Exercise}
+
+
+%% Some of my own personal favoriate macros... (remove these if you want)
+\renewcommand{\vec}[1]{\mathbf{#1}}
+%%       To make a boldface vector, use backslash v in front of the 
+%%       letter and add a new command for that letter here or in 
+%%       the macros.tex file:
+\newcommand\rank{\ensuremath{\operatorname{rank}}}
+\newcommand\nullity{\ensuremath{\operatorname{nullity}}}
+\newcommand{\<}{\ensuremath{\langle}}
+\renewcommand{\>}{\ensuremath{\rangle}}
+\newcommand{\ur}{\ensuremath{\underline{\mathrm{r}}}}
+\newcommand{\uT}{\ensuremath{\underline{\mathrm{T}}}}
+\newcommand{\uF}{\ensuremath{\underline{\mathrm{F}}}}
+\newcommand{\uN}{\ensuremath{\underline{\mathrm{N}}}}
+\newcommand{\ui}{\ensuremath{\underline{\mathrm{i}}}}
+\newcommand{\uj}{\ensuremath{\underline{\mathrm{j}}}}
+\newcommand{\ua}{\ensuremath{\underline{\mathrm{a}}}}
+\newcommand{\ub}{\ensuremath{\underline{\mathrm{b}}}}
+\newcommand{\un}{\ensuremath{\underline{\mathrm{n}}}}
+\newcommand{\uv}{\ensuremath{\underline{\mathrm{v}}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand\va{\vec{a}}
+\newcommand\vb{\vec{b}}
+\newcommand\vu{\vec{u}}
+\newcommand\vv{\vec{v}}
+\newcommand\vw{\vec{w}}
+\newcommand\vs{\vec{s}}
+\newcommand\vx{\vec{x}}
+\newcommand\vy{\vec{y}}
+\newcommand\vz{\vec{z}}
+\newcommand\vzero{\vec{0}}
+
+\newcommand{\dotsize}{1pt}
+\newcommand{\Heq}{\ensuremath{ \; \stackrel{\mathrm{H}}{=}} \; }
+
+\pagestyle{foot}
+%%% Running footer will have a space for page score (if this is not the solution key)
+\ifanswers  %% do nothing
+\else
+\runningfooter{}{}{Score for this page: \makebox[1in]{\hrulefill} out of \pointsonpage{\thepage}}
+\fi
+
+
+\begin{document}
+
+\noindent {\bf MATH 317: SPRING 2016}\hfill \ifanswers {\bf ANSWERS} \hfill {\bf EXAM 1} 
+\else {\bf EXAM 1}
+
+    \begin{center}
+      \fbox{\fbox{\parbox{7in}{\centering
+            {\bf RULES}
+            \begin{itemize}
+            \item No books or notes or calculators allowed.
+            \item No bathroom breaks until after you have completed and turned in your test.
+            \item Out of consideration for your classmates, do not make
+              disturbing noises during the exam.
+            \item {\bf Phones and other electronic devices must be off or in silent mode.}
+      \end{itemize}}}}
+    \end{center}
+    \vspace{0.2in}
+
+    \vskip2cm
+
+    \noindent    {\it Cheating will not be tolerated.}  If there is any indication that a
+    student may have given or received unauthorized aid on this test, the case 
+    will be handed over to the ISU Office of Judicial Affairs.
+    When you finish the exam, please sign the following statement acknowledging that you understand 
+    this policy:\\
+    \\
+    ``On my honor as a student I,
+    \underline{\phantom{XXXXXXXXXXXXXXXXXXXXXX}}, have neither
+    given nor received unauthorized aid on this exam.''
+    \hbox{} \hskip .25cm {\small (print name clearly)}\\
+    \\
+    \vspace{0.1in}
+    \makebox[\textwidth]{Signature:\enspace\hrulefill ~Date: \underline{\phantom{x} 2016-02-19 \phantom{x}}}
+
+
+  \newpage
+~
+\vskip4cm
+\thispagestyle{empty}
+{\large \begin{center} \gradetable[v][pages] \end{center}  }
+~
+  \newpage
+      \fi
+
+\begin{questions} % Begins the questions environment
+
+  %%%% Problem 1.
+  \question
+  Let $\vx = (x_1, x_2, \dots, x_n)$ and $\vy = (y_1, y_2, \dots, y_n)$ be vectors in $\R^n$.
+  \begin{parts}
+    \part[3] Define the dot product of $\vx$ and $\vy$.
+    \begin{solution}
+      \[\vx \cdot \vy = x_1y_1 + x_2 y_2 + \cdots + x_n y_n.\]
+    \end{solution}
+    \vspace{\stretch{1}}
+
+    \part[3] What does it mean to say that $\vx$ and $\vy$ are \emph{parallel}?
+
+    \begin{solution} The vectors $\vx$ and $\vy$ are \emph{parallel} if they are scalar multiples of
+      each other. That is, there exists a real number $c$ such that $\vx = c \,\vy$.
+    \end{solution}
+    \vspace{\stretch{1}}
+
+    \part[4]
+    What does it mean to say that $\vx$ and $\vy$ are \emph{orthogonal}?
+    \begin{solution} The vectors $\vx$ and $\vy$ are \emph{orthogonal} if their dot product is 0.
+      That is, $\vx \cdot \vy=0$.
+    \end{solution}
+
+    \vspace{\stretch{1}}
+
+    \part[4]
+    Suppose $\vv_1, \vv_2, \dots, \vv_k$ are also vectors in $\R^n$.
+    What does it mean to say that $\vx$ is a \emph{linear combination} of the vectors 
+    $\vv_1, \vv_2, \dots, \vv_k$?
+    \begin{solution}
+      $\vx$ is a \emph{linear combination} of the vectors 
+    $\vv_1, \vv_2, \dots, \vv_k$ if there exist scalars $c_1, c_2, \dots, c_n$ such that
+      \[
+      \vx = c_1 \vv_1 +c_2 \vv_2 + \cdots +c_n \vv_n.
+      \]
+    \end{solution}
+    \vspace{\stretch{1}}
+
+  \end{parts}
+
+\newpage
+
+
+%%%% Problem 2. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question[10]
+Recall Prop.~2.1 of our text says that the dot product satisfies the following properties:
+for all $\vx, \vy, \vz \in \R^n$ and $c \in \R$,
+\begin{enumerate}
+\item $\vx \cdot \vy = \vy \cdot \vx$;
+\item $\vx \cdot \vx = \|\vx\|^2 \geq 0$, with equality if and only if $\vx = 0$;
+\item $(c\vx) \cdot \vy = c(\vx \cdot \vy)$;
+\item $\vx \cdot (\vy + \vz) = \vx \cdot \vy + \vx \cdot \vz$.
+\end{enumerate}
+
+Prove that if $\vx$ is orthogonal to each of the vectors 
+$\vv_1, \vv_2, \dots, \vv_k$, then  $\vx$ is orthogonal to every linear
+combination of the vectors $\vv_1,\dots, \vv_k$.  (For full credit,
+identify places in your proof where properties from the list above are used;
+to refer to these properties, use the letters given above.)
+
+\begin{solution}
+  Suppose $\vx$ is orthogonal to each of the vectors $\vv_1,\dots, \vv_k$. Then,
+  \begin{alignat*}{2}
+    \vx \cdot (c_1 \vv_1 + \cdots + c_k \vv_k) 
+    &= \vx\cdot (c_1 \vv_1) + \cdots + \vx\cdot (c_k \vv_k)
+    &\quad & (\because \text{Prop.~2.1 (4)})\\
+    &= c_1 (\vx\cdot \vv_1) + \cdots + c_k (\vx\cdot \vv_k)
+    &\quad & (\because \text{Prop.~2.1 (1) and (3)})\\
+    &= c_1 0 + \cdots + c_k 0 
+    &\quad & (\because \vx\cdot \vv_i = 0 \text{ for all $1\leq i\leq k$})\\
+    &= 0.
+  \end{alignat*}
+\end{solution}
+
+\vspace{\stretch{1}}
+
+
+%%%% Problem 3. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\question[5] 
+\label{qu:3}
+State a theorem about existence and uniqueness of solutions to the system $A
+    \vx = \vb$. You may state more than one theorem if you wish, but
+    quality is better than quantity. Only write what you know is true and 
+    {\bf carefully state your assumptions}.  If you make a broad statement that, in fact, only applies
+    under a narrow set of conditions, and you leave out those conditions, then you will not receive
+    very much credit. (Use only the space provided below.)
+    
+\begin{solution}
+There is more than one good answer to this.  Here's one possibility, which is probably the most
+helpful when answering the questions on the next page.  
+(Other possible answers are given on the last page below.)
+
+Let $A\in \R^{m\times n}$. Then the equation $A\vx = \vb$ 
+\begin{enumerate}
+\item is consistent for all $\vb \in \R^m$ when $\rank(A)=m$ (=number of rows of $A$);
+\item has at most one solution when $\rank(A)=n$ (=number of columns of $A$).
+\end{enumerate}
+Recall that $\rank(A)=m$ iff the echelon form of $A$ has 
+no rows consisting of all zeros; 
+$\rank(A)=n$ iff the echelon form of $A$ has 
+a pivot in every column.
+
+\end{solution}
+
+\vspace{\stretch{1}}
+
+\newpage
+
+
+%%%% Problem 4. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question For the given matrix, circle the letters corresponding to true statements in each case.
+Select from the following statements:
+\begin{enumerate}[A.]
+        \item For every $\vb \in \R^m$, $A\vx = \vb$ is consistent.
+        \item For every $\vb \in \R^m$, $A\vx = \vb$ is inconsistent.
+        \item For every $\vb \in \R^m$, $A\vx = \vb$ has exactly one solution.
+        \item For every $\vb \in \R^m$, $A\vx = \vb$ has infinitely many solutions.
+        \item There exists $\vb \in \R^m$ such that $A\vx = \vb$ is consistent.
+        \item There exists $\vb \in \R^m$ such that $A\vx = \vb$ is inconsistent.
+        \item There exists $\vb \in \R^m$ such that $A\vx = \vb$ has exactly one solution.
+        \item There exists $\vb \in \R^m$ such that $A\vx = \vb$ has infinitely many solutions.
+\end{enumerate}
+\begin{parts}
+  \part[4] If the matrix $A$ has reduced echelon form 
+  $\begin{bmatrix*}[r]       	
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+  \end{bmatrix*}$, \\\\then
+      which of the statements (a)--(h) above is true? (Select all that apply.)\\\\
+      \begin{oneparchoices} 
+        \CorrectChoice % A
+        \choice % B 
+        \CorrectChoice % C
+        \choice % D
+        \CorrectChoice % E
+        \choice % F
+        \CorrectChoice % G
+        \choice % H
+      \end{oneparchoices}
+
+      \vspace{\stretch{1}}       
+
+      \part[4] If the matrix $A$ has reduced echelon form 
+      $\begin{bmatrix*}[r]       	
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        0 & 0 & 0
+      \end{bmatrix*}$, \\\\then
+      which of the statements (a)--(h) above is true? (Select all that apply.)\\\\
+      \begin{oneparchoices}
+        \choice % A
+        \choice % B 
+        \choice % C
+        \choice % D
+        \CorrectChoice % E
+        \CorrectChoice % F
+        \CorrectChoice % G
+        \choice % H
+      \end{oneparchoices}
+
+      \vspace{\stretch{1}}       
+
+      \part[4] If the matrix $A$ has reduced echelon form 
+      $\begin{bmatrix*}[r]1 & 0 & 1 \\0 & 1 & 2 \end{bmatrix*}$, \\\\then
+       which of the statements (a)--(h) above is true? (Select all that apply.)\\\\
+      \begin{oneparchoices} 
+        \CorrectChoice % A
+        \choice % B 
+        \choice % C
+        \CorrectChoice % D
+        \CorrectChoice % E
+        \choice % F
+        \choice % G
+        \CorrectChoice % H
+      \end{oneparchoices}
+
+      \vspace{\stretch{1}}       
+
+      \part[4] If the matrix %$A\in \R^{4\times 6}$
+      $A$ has reduced echelon form 
+      $\begin{bmatrix*}[r]       	
+      1 & 0& -1 & 2 & 0 & 1\\
+      0 & 1 & 1 & 3 & 0& -2\\
+      0 & 0 & 0 & 0 & 1& -1\\
+      0 & 0 & 0 & 0 & 0 & 0\end{bmatrix*}$, \\\\then
+       which of the statements (a)--(h) above is true? (Select all that apply.)\\\\
+      \begin{oneparchoices} 
+        \choice % A
+        \choice % B 
+        \choice % C
+        \choice % D
+        \CorrectChoice % E
+        \CorrectChoice % F
+        \choice % G
+        \CorrectChoice % H
+      \end{oneparchoices}
+
+    \end{parts}
+
+\newpage
+    %%%% Problem 5.
+\question
+    Let $A \in \R^{m\times n}$, $B \in \R^{n\times m}$, $C \in \R^{n\times m}$, and $\vb\in \R^m$. 
+    For each statement below, either prove the claim or write FALSE and give a counter-example. 
+    \begin{parts}
+      
+   \part[5]
+    {\bf Claim:} If $AB = I_m$, then a solution to $A\vx = \vb$, if it exists, is unique.
+
+      \begin{solution} FALSE.  
+        Let $A = \begin{bmatrix*}[r] 1 &1 \end{bmatrix*}$, and suppose $\vb = [0]$.
+        Then there are infinitely many solutions to $A\vx =\vb$, since every
+        $\vx = (x_1, x_2)$ satisfying $x_1 + x_2 = 0$ is a solution. 
+      \end{solution}
+
+      \vspace{\stretch{1}}       
+
+   \part[5]
+    {\bf Claim:} If $CA = I_n$, then a solution to $A\vx = \vb$, if it exists, is unique.
+
+      \begin{solution}
+        Suppose $A\vx = \vb$ has a solution, call it $\vx'$.
+        Suppose $\vx''$ is another solution, so that $A\vx'' = \vb$. Then 
+        $A\vx' = A\vx''$, so
+        $BA\vx' = BA\vx''$, so
+        $I_n\vx' = I_n\vx''$, so
+        $\vx' = \vx''$.
+      \end{solution}
+
+      \vspace{\stretch{1}}       
+
+    \part[5]
+    {\bf Claim:} If $A\vx = \vzero$ has only the trivial solution $\vx = \vzero$, then 
+    for every $\vb\in \R^m$ there is exactly one solution to $A\vx = \vb$.
+
+      \begin{solution}
+        FALSE. 
+        Let $A = \begin{bmatrix*}[r] 1\\0 \end{bmatrix*}$.
+        Then the only solution to $A\vx =\vzero$ is $\vx =[0]$. That is,
+        \[\begin{bmatrix*}[r] 1\\0 \end{bmatrix*} 
+        \begin{bmatrix*}[r] x_1 \end{bmatrix*} 
+        =\begin{bmatrix*}[r] 0\\0 \end{bmatrix*}
+        \quad \text{ if and only if } \quad x_1 = 0.\]
+        In this case, \emph{if the equation $A\vx = \vb$ has a solution}, then it is unique.
+        However, it is not true that $A\vx = \vb$ always has a unique solution,
+        since it may be inconsistent.
+        For example, continuing with the matrix $A = \begin{bmatrix*}[r] 1\\0 \end{bmatrix*}$ above, 
+        if $\vb = \begin{bmatrix*}[r] 1\\1\end{bmatrix*}$, then $A\vx = \vb$ has no solution.
+      \end{solution}
+
+      \vspace{\stretch{1}}       
+ 
+     \end{parts}
+
+  \newpage
+
+  %%%% Problem 6.
+  \question  Let 
+  $A = \begin{bmatrix*}[r] 1 & 1 & 0\\ 0 & 1& -1\\ 1 & 1 & 1\end{bmatrix*}$
+    and $\vb = \begin{bmatrix*}[r] 1\\2\\3\end{bmatrix*}$.
+      \begin{parts}
+        \part[8] Find $A^{-1}$.
+
+        \begin{solution}
+          \[A^{-1} = \begin{bmatrix*}[r] 2& -1& -1\\-1 & 1 & 1\\-1 & 0 &1\end{bmatrix*}\]
+        \end{solution}
+
+        \vspace{\stretch{1}}       
+
+        \part[5] Use your answer to (a) to solve $A\vx = \vb$.
+
+        \begin{solution}
+          \[\vx = \begin{bmatrix*}[r]-3\\ 4\\ 2\end{bmatrix*} \]
+        \end{solution}
+
+        \vspace{\stretch{1}}       
+
+        \part[2] %Let $\va_i$ denote the $i$-th column of the matrix $A$.  
+        Use your answer to (b) to express $\vb$ as a linear combination of the columns of $A$.\\
+        (Fill in the blanks with your answers.)\\\\
+
+        $\begin{bmatrix*}[r] 1\\2\\3\end{bmatrix*} =$
+          \fillin[$-3$][1cm] $\begin{bmatrix*}[r] 1\\0\\1\end{bmatrix*} +$
+            \fillin[$ 4$][1cm] $\begin{bmatrix*}[r] 1\\1\\1\end{bmatrix*} +$
+              \fillin[$ 2$][1cm] $\begin{bmatrix*}[r] 0\\-1\\1\end{bmatrix*}$ 
+                
+      \end{parts}
+
+\end{questions}
+
+\ifanswers
+\newpage 
+Alternative answers to Question \ref{qu:3}:
+
+\begin{itemize}
+\item 
+Suppose the system $A\vx = \vb$ is consistent. Then it has a unique solution if
+and only if the associated homogeneous system $A\vx = \vzero$ has only the trivial solution. This
+happens exactly when $\rank(A)$ is the number of columns of $A$.
+
+\item Let $A\in \R^{n\times n}$. The following are equivalent:
+\begin{enumerate}
+\item $A$ is nonsingular.
+\item $A\vx = \vzero$ has only the trivial solution.
+\item For every $\vb \in \R^n$, the equation $A\vx = \vb$ has a solution (indeed, a unique solution).
+\end{enumerate}
+\end{itemize}
+
+\else % do nothing
+\fi
+
+\scratchpage
+
+\scratchpage
+
+
+\end{document}
+
+
+%%% inserting a grid for graphing
+%% \smallskip\fillwithgrid{1in}

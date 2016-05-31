@@ -1,0 +1,126 @@
+\documentclass[11pt]{amsart}
+% The following \documentclass options may be useful:
+% preprint      Remove this option only once the paper is in final form.
+% 10pt          To set in 10-point type instead of 9-point.
+% 11pt          To set in 11-point type instead of 9-point.
+% numbers       To obtain numeric citation style instead of author/year.
+
+%% \usepackage{setspace}\onehalfspacing
+
+\usepackage{amsmath}
+\usepackage{amscd,amssymb,amsthm} %, amsmath are included by default
+\usepackage{latexsym,stmaryrd,mathrsfs,enumerate,scalefnt,ifthen}
+\usepackage{mathtools}
+\usepackage[mathcal]{euscript}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+\usepackage{url}
+\usepackage{scalefnt}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage[margin=1in]{geometry}
+\usepackage{scrextend}
+
+%%////////////////////////////////////////////////////////////////////////////////
+%% Theorem styles
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{Fact}[theorem]{Fact}
+\newtheorem*{fact}{Fact}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+\newtheorem*{obs}{Observation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acronyms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \usepackage[acronym, shortcuts]{glossaries}
+%\usepackage[smaller]{acro}
+\usepackage[smaller]{acronym}
+\usepackage{xspace}
+
+%% \acs{CSP} -- short version of the acronym\\
+%% \acl{CSP} -- expanded acronym without mentioning the acronym.\\
+%% \acp{CSP} -- plurals.\\
+%% \acfp{CSP} -- long forms into plurals.\\
+%% \acsp{CSP} -- short form into a plural.\\
+%% \aclp{CSP} -- long form into a plural.\\
+%% \acfi{CSP} -- Full Name acronym in italics and abbreviated form in upshape.\\
+%% \acsu{CSP} -- short form of the acronym and marks it as used.\\
+%% \aclu{CSP} -- Prints the long form of the acronym and marks it as used.\\
+
+\acrodef{lics}[LICS]{Logic in Computer Science}
+\acrodef{sat}[SAT]{satisfiability}
+\acrodef{nae}[NAE]{not-all-equal}
+\acrodef{ctb}[CTB]{cube term blocker}
+\acrodef{tct}[TCT]{tame congruence theory}
+\acrodef{wnu}[WNU]{weak near-unanimity}
+\acrodef{CSP}[CSP]{constraint satisfaction problem}
+\acrodef{MAS}[MAS]{minimal absorbing subuniverse}
+\acrodef{MA}[MA]{minimal absorbing}
+\acrodef{cib}[CIB]{commutative idempotent binar}
+\acrodef{sd}[SD]{semidistributive}
+\acrodef{NP}[NP]{nondeterministic polynomial time}
+\acrodef{P}[P]{polynomial time}
+\acrodef{PeqNP}[P $ = $ NP]{P is NP}
+\acrodef{PneqNP}[P $ \neq $ NP]{P is not NP}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{inputs/proof-dashed}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Put new macros in the macros.sty file
+\usepackage{inputs/macros}
+
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{inputs/refs.bib}
+
+\begin{document}
+
+\title[short title]{Long Title}
+\date{\today}
+\author[W.~DeMeo]{William DeMeo}
+\address{Iowa State University}
+\email{williamdemeo@gmail.com}
+
+%% \thanks{The authors would like to extend special thanks to...}
+
+\maketitle
+
+%% \begin{abstract}\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\section{Definitions and Notations}
+\label{sec:defin-notat}
+
+Cliff's book~\cite{MR2839398}.
+My GitHub repo~\cite{overalgebras-github}.
+%% \appendix
+%% \section{Appendix Title}
+%% This is the text of the appendix, if you need one.
+
+%\bibliographystyle{amsplain} %% or amsalpha
+%% \bibliographystyle{plain-url}
+\printbibliography
+
+
+\end{document}

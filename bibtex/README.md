@@ -1,8 +1,9 @@
 ## BibTeXRefs
 
-This is a repository containing BibTeX citations for the works of some
-authors universal algebra and related fields.  The files were generated for each
-author by listing the 50 most recent BibTeX records appearing on MathSciNet.
+This is a repository containing BibTeX citations for (most of) the works of some
+authors working in universal algebra and related fields.  
+Most of these files were generated for by listing the 50 most recent BibTeX 
+records appearing on MathSciNet for the given author.
 
 To use any of these files in your LaTeX document, add some lines like the
 following just before `\end{document}`:

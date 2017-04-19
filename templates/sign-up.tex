@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+
+%Packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=blue,
+citecolor=blue,
+urlcolor=blue,
+}
+
+%Single Letter Commands
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+%Compound Commands
+\newcommand{\bdry}{\operatorname{bdry}}
+\newcommand{\cj}{\overline}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\itr}{\operatorname{int}}
+\newcommand{\lap}{\mathcal{L}}
+\newcommand{\op}{\operatorname}
+\newcommand{\Pa}{\mathcal{P}}
+\newcommand{\RI}{\mathcal{R}}
+\newcommand{\tb}{\textbf}
+\newcommand{\tn}{\textnormal}
+\newcommand{\un}{\underline}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\vp}{\varphi}
+
+%Theorems, Lemmas, Props, etc.
+\newtheorem{theorem}{Theorem}
+\newtheorem*{thrm}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conj}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem*{defn}{Definition}
+\newtheorem{ex}{Example}
+
+%Other Stuff
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+\hskip -\arraycolsep
+\let\@ifnextchar\new@ifnextchar
+\array{#1}}
+\makeatother
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+  
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\Large
+
+\noindent \textbf{Event}: UH MFC Tutorial
+
+\medskip
+
+\noindent \textbf{Date}: 2017/04/18
+
+\medskip
+
+\noindent \textbf{Time}: 3:00PM--4:00 PM
+
+\medskip
+
+\noindent \textbf{Location}: Keller 401
+
+\bigskip
+
+\begin{center}
+
+\textbf{Attendees}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{|l|X|X|X|}
+  \hline
+  \textbf{Undergraduates} & \textbf{Graduates} & \textbf{Faculty} & \textbf{email} \\
+  \hline
+  & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  \hline
+    & & &  \\
+  % \hline
+  %   \textbf{Total} &   \textbf{Total} &   \textbf{Total} &   \textbf{Total}  \\
+  \hline
+    & & &  \\
+  \hline
+\end{tabularx}
+
+\end{center}
+
+\end{document}

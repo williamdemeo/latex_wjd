@@ -1,0 +1,63 @@
+%% File: FM3.tex
+%% Author: williamdemeo@gmail.com
+%% Copyright (C) 2018 William DeMeo
+
+%% \documentclass{amsart}
+%% \usepackage{amsmath}%
+%% \usepackage{amsfonts}%
+%% \usepackage{amssymb}%
+%% \usepackage{mathrsfs}
+%% \usepackage{stmaryrd,enumerate}
+%% \usepackage{graphicx}
+%% \usepackage{comment}
+%% \usepackage{tikz}
+%% \usepackage{xspace}
+\usetikzlibrary{math} %needed tikz library
+%% \begin{document}
+%% \newcommand{\dotsize}{0.8pt}
+%% \tikzstyle{lat} = [circle,draw,inner sep=\dotsize]
+%% \newcommand{\figscale}{1}
+
+%% \begin{tikzpicture}[scale=\figscale]
+  \foreach \j in {0,...,8} {
+    \node[lat] (0\j) at (0,\j) {};
+  }
+  \foreach \j in {1,2,4,6,7} {
+    \node[lat] (n1\j) at (-1,\j) {};
+    \node[lat] (1\j) at (1,\j) {};
+  }
+  \foreach \j in {3,5} {
+    \node[lat] (n2\j) at (-2,\j) {};
+    \node[lat] (2\j) at (2,\j) {};
+  }
+  \node[lat] (n34) at (-3,4) {};
+  \node[lat] (34) at (3,4) {};
+
+  \draw[semithick] (00) -- (01);
+  \draw[semithick] (02) -- (03) -- (04) -- (05) -- (06);
+  \draw[semithick] (07) -- (08);
+  \draw[semithick] (n16) -- (n17);
+  \draw[semithick] (16) -- (17);
+  \draw[semithick] (n11) -- (n12);
+  \draw[semithick] (11) -- (12);
+
+  \draw[semithick] (00) -- (n11) -- (02) -- (11) -- (00);
+  \draw[semithick] (06) -- (n17) -- (08) -- (17) -- (06);
+
+  \draw[semithick] (01) -- (n12) -- (n23) -- (n34);
+  \draw[semithick] (01) -- (12) -- (23) -- (34);
+  \draw[semithick] (12) -- (03) -- (n14) -- (n25);
+  \draw[semithick] (n12) -- (03) -- (14) -- (25);
+  \draw[semithick] (23) -- (14) -- (05) -- (n16);
+  \draw[semithick] (n23) -- (n14) -- (05) -- (16);
+  \draw[semithick] (34) -- (25) -- (16) -- (07);
+  \draw[semithick] (n34) -- (n25) -- (n16) -- (07);
+
+  \node[lat] (n13) at (-1,3) {};
+  \node[lat] (n15) at (-1,5) {};
+  \node[lat] (n24) at (-2,4) {};
+  \draw[thick,red] (02) -- (n13) -- (n24) -- (n15) -- (06);
+  \draw[thick,red] (n13) -- (04) -- (n15);
+%%  \end{tikzpicture}
+%% \end{document}
+

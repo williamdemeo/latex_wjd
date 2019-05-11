@@ -1,0 +1,1 @@
+**Exercise 59.** Show that :math:`\lambda` and :math:`\mathrm{ap}` do indeed give a set isomorphism, establishing the proposition.

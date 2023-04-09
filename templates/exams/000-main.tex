@@ -40,25 +40,33 @@
         %\listoftables \clearpage
         %\pagenumbering{arabic}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIRST PAGE HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        \noindent {\bf \coursename : \semester}\hfill {\bf Midterm Examination} \hfill
+        \ifanswers {\bf ANSWERS} \else {\bf Section \sectionnumber} \fi
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INSTRUCTIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-        \noindent {\bf \coursename : \semester}\hfill {\bf Midterm Examination} \hfill
-        \ifanswers {\bf ANSWERS} \else {\bf Section \sectionnumber}
-
-        \begin{center}
-          \fbox{\fbox{\parbox{7in}{\centering
-                {\bf RULES}
-                \begin{itemize}
-                  \item {\bf No books}, {\bf no notes}, and {\bf no calculators}.
-                  \item {\bf No bathroom breaks} until after you have completed and submitted the exam.
-                  \item {\bf All phones must be completely silent} for the duration of the exam, so please \\
-                        {\it turn off your phone now!}
-                \end{itemize}}}}
-        \end{center}
-
+        \ifanswers
+          \begin{center}
+            \fbox{\fbox{\parbox{7in}{\centering
+                  {\bf RULES}
+                  \begin{itemize}
+                    \item {\bf No books}, {\bf no notes}, and {\bf no calculators}.
+                    \item {\bf No bathroom breaks} until after you have completed and submitted the exam.
+                    \item {\bf All phones must be completely silent} for the duration of the exam, so please \\
+                          {\it turn off your phone now!}
+                  \end{itemize}}}}
+          \end{center}
+        \fi
         \vspace{0.2in}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HONOR PLEDGE AND SIGNATURE

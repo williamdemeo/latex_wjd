@@ -188,12 +188,17 @@
           \setlength\TFlengthB{\linewidth}
           \addtolength\TFlengthB{-\TFlengthA}
           \parbox[t]{\TFlengthB}{#2}
-          \parbox[t]{\TFlengthA}{\TrueFalse{#1}}
-        }
+          \parbox[t]{\TFlengthA}{\TrueFalse{#1}}}
 
         \newtheorem*{answer}{{\bf Answer}}
         \newtheorem*{answers}{{\bf Answers}}
         \newtheorem*{explanation}{{\bf Explanation}}
+
+        %% Make available "ifanswers" macro.
+        \makeatletter    % change catcode of @ to 11.
+        \newif\ifanswers
+        \@ifclasswith{exam}{answers}{\answerstrue}{\answersfalse}
+        \makeatother     % change catcode of @ to 12
 
         \pagestyle{foot}
         \ifanswers
@@ -224,11 +229,6 @@
         %\marginpointname{pts}
         %\marginbonuspointname{pts}
 
-        % To access package-internal macros,
-        \makeatletter    % change catcode of @ to 11.
-        \newif\ifanswers
-        \@ifclasswith{exam}{answers}{\answerstrue}{\answersfalse}
-        \makeatother     % change catcode of @ to 12
 
         \newcommand\explain[1]{%
           \ifanswers

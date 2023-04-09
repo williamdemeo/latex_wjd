@@ -1,4 +1,4 @@
-## Leixb-barcadoc-template
+## exam template
 
 The original source for the files in this directory were obtained from
 
@@ -10,10 +10,10 @@ At the command line, navigate to the Leixb-barcadoc-template directory and
 enter the following commands: `nix flake lock` and `nix build`.
 
 If the document generation is successful, the resulting pdf will
-reside in the `Leixb-barcadoc-template/result` directory.
+reside in the `exams/result` directory.
 
 ```
-cd Leixb-barcadoc-template
+cd exams
 nix flake lock
 nix build
 ```

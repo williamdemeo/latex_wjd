@@ -230,6 +230,13 @@
         \@ifclasswith{exam}{answers}{\answerstrue}{\answersfalse}
         \makeatother     % change catcode of @ to 12
 
+        \newcommand\explain[1]{%
+          \ifanswers
+          \begin{EnvUplevel}
+            {\small \underline{Explanation}. #1}
+          \end{EnvUplevel}
+          \else \fi}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CUSTOM COMMANDS

@@ -46,6 +46,7 @@
               xltabular
               ltablex
               background
+              everypage
               ;
           })
           which

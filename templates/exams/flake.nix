@@ -32,8 +32,8 @@
               threeparttablex
               makecell
               environ
-              biblatex
-              biber
+              # biblatex
+              # biber
               fvextra
               upquote
               catchfile

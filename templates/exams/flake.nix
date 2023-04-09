@@ -21,6 +21,7 @@
           (texlive.combine {
             inherit (texlive)
               scheme-medium
+              exam
               framed
               titlesec
               cleveref
